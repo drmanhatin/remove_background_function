@@ -9,7 +9,8 @@ In a consumption tier function, the startup time is around 30 seconds. An image 
 
 ##This is not production ready. 
 
-TODO: 
+*TODO: *
+
 -Code cleanup
 
 -Reduce RAM usage <- larger files can timeout azure function
