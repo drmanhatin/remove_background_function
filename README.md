@@ -24,6 +24,7 @@ Create function app in Azure using Azure Portal OR Function CLI tools OR VS Code
 
 Then deploy using CLI or VSCode
 
-`func azure functionapp publish <FunctionAppName>` 
+Cli command: `func azure functionapp publish <FunctionAppName>` 
 
+More info about this on:
 https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cwindows%2Ccsharp%2Cportal%2Cbash%2Ckeda
