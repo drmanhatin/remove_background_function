@@ -20,6 +20,9 @@ TODO:
 
 HOW TO DEPLOY THIS:
 Create function app in Azure using Azure Portal OR Function CLI tools OR VS Code Azure Function plugin
+
 Then deploy using CLI or VSCode
+
 `func azure functionapp publish <FunctionAppName>` 
+
 https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cwindows%2Ccsharp%2Cportal%2Cbash%2Ckeda
