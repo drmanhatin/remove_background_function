@@ -22,6 +22,7 @@ License:
 """
 print("starting main.py imports")
 import logging
+from time import time
 import azure.functions as func
 import os
 import tempfile
@@ -33,6 +34,7 @@ import sys
 sys.path.append(".")
 sys.path.append("./libs")
 from .libs import postprocessing as postprocessing
+from .libs import preprocessing as preprocessing
 
 logging.basicConfig(level=logging.ERROR)
 logger = logging.getLogger(__name__)
@@ -86,8 +88,8 @@ def __save_image_file__(img, file_name, output_path, wmode):
 
 
 model = U2NET("u2net")
-postprocessing_method = postprocessing.method_detect("none")
-preprocessing_method = None
+print('setting processing methods')
+
 
 def process(input_path, output_path):
     """
@@ -98,28 +100,41 @@ def process(input_path, output_path):
     :param postprocessing_method_name: Method for image preprocessing
     :param preprocessing_method_name: Method for image post-processing
     """
-
-    global model
-    global preprocessing_method
-    global postprocessing_method
     
     if input_path is None or output_path is None:
         raise Exception("Bad parameters! Please specify input path and output path.")
  
+    
+    postprocessing_method = postprocessing.method_detect("aq")
+    preprocessing_method = preprocessing.method_detect("aq")
+    
+    print("method in process is", postprocessing_method, preprocessing_method)
     image = model.process_image(input_path, preprocessing_method, postprocessing_method)
     print("finished processing file")
     __save_image_file__(image, os.path.basename(input_path), output_path, "file")
 
+import random
+import string
+
+def get_random_string(length):
+    # With combination of lower and upper case
+    result_str = ''.join(random.choice(string.ascii_letters) for i in range(length))
+    # print random string
+
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
 
+    print(time.time())
+    input_path = get_random_string(8)
+    
     if(req.get_body().__len__()  < 5): 
-        return func.HttpResponse("now warm")
-     
-    fp = tempfile.NamedTemporaryFile(delete=False, suffix=".jpg" )
-    fp.write(req.get_body())
-    fp.close()
-    input_path = fp.name
+        input_path = "tempImagePath.jpg"
+
+    else:  
+        fp = tempfile.NamedTemporaryFile(delete=False, suffix=".jpg" )
+        fp.write(req.get_body())
+        fp.close()
+        input_path = fp.name
 
     op = tempfile.NamedTemporaryFile(delete=False, suffix=".png")  
     output_path = op.name

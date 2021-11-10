@@ -90,6 +90,7 @@ class U2NET:
         :param postprocessing: Image Post-Processing Algorithm Class (optional)
         :return: PIL RGBA Image. If an error reading the image is detected, returns False.
         """
+        print(preprocessing, postprocessing)
         from datetime import datetime
         if isinstance(data, str):
             logger.debug("Load image: {}".format(data))
@@ -99,7 +100,7 @@ class U2NET:
         dt = datetime.today()  
         seconds = dt.timestamp()
         if preprocessing:  # If an algorithm that preprocesses is specified,
-         
+            print("preprocessing")
             # then this algorithm should immediately remove the background
             image = preprocessing.run(self, image, org_image)
         else:

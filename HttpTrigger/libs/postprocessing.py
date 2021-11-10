@@ -28,7 +28,10 @@ logger = logging.getLogger(__name__)
 
 
 def method_detect(method: str):
-    """Detects which method to use and returns its object"""
+    """Detects which method to use and returns its object"""   
+    
+    print("detecting post method", method)
+
     if method in POSTPROCESS_METHODS:
         if method == "rtb-bnb":
             return RemovingTooTransparentBordersHardAndBlurringHardBorders()

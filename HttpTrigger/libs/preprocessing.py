@@ -33,6 +33,9 @@ logger = logging.getLogger(__name__)
 
 def method_detect(method: str):
     """Detects which method to use and returns its object"""
+
+    print("detecting pre method", method)
+
     if method in PREPROCESS_METHODS:
         if method == "bbmd-maskrcnn":
             return BoundingBoxDetectionWithMaskMaskRcnn()
