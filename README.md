@@ -1,9 +1,8 @@
 ﻿# remove_background_function
-In this repository you can find an Azure Function, which listens to http requests, with which you can remove the background of an image.
+In this repository you can find an Azure Function, which listens to http requests, with which you can remove the background of an image. You can find an explanation here https://www.youtube.com/watch?v=0p6Q15ks7Dw&feature=youtu.be
+
 
 In a consumption tier function, the startup time is around 30 seconds. 
-
-You can find an explanation here https://www.youtube.com/watch?v=0p6Q15ks7Dw&feature=youtu.be
 
 ##This is not production ready. 
 
