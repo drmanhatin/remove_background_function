@@ -7,9 +7,9 @@ In this repository you can find an Azure Function, which listens to http request
 
 In a consumption tier function, the startup time is around 30 seconds. An image of 1000x1000px takes about 3 seconds to process.
 
-##This is not production ready. 
+## This is not production ready. 
 
-*TODO: *
+### TODO: 
 
 -Code cleanup
 
