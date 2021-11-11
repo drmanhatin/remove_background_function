@@ -1,5 +1,6 @@
 
 Video about this repository here: https://www.youtube.com/watch?v=t7l_WwV2r88
+
 Blog post about this repository here: https://victorsanner.nl/azure/functions/remove.bg/clone/2021/10/26/removing-the-background-of-an-image-using-azure-functions-and-AI.html
 
 # remove_background_function
