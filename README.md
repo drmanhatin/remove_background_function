@@ -1,6 +1,6 @@
 
-Credits to OpHoperHPO for making the image background remove tool https://github.com/OPHoperHPO/image-background-remove-tool
-
+Video about this repository here: https://www.youtube.com/watch?v=t7l_WwV2r88
+Blog post about this repository here: https://victorsanner.nl/azure/functions/remove.bg/clone/2021/10/26/removing-the-background-of-an-image-using-azure-functions-and-AI.html
 
 # remove_background_function
 In this repository you can find an Azure Function, which listens to http requests, with which you can remove the background of an image. You can find an explanation here https://www.youtube.com/watch?v=0p6Q15ks7Dw&feature=youtu.be
@@ -28,3 +28,6 @@ Cli command: `func azure functionapp publish <FunctionAppName>`
 
 More info about this on:
 https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cwindows%2Ccsharp%2Cportal%2Cbash%2Ckeda
+
+Credits to OpHoperHPO for making the image background remove tool https://github.com/OPHoperHPO/image-background-remove-tool
+
