@@ -113,20 +113,9 @@ def process(input_path, output_path):
     print("finished processing file")
     __save_image_file__(image, os.path.basename(input_path), output_path, "file")
 
-import random
-import string
-
-def get_random_string(length):
-    # With combination of lower and upper case
-    result_str = ''.join(random.choice(string.ascii_letters) for i in range(length))
-    # print random string
-
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
 
-    print(time.time())
-    input_path = get_random_string(8)
-    
     if(req.get_body().__len__()  < 5): 
         input_path = "tempImagePath.jpg"
 
